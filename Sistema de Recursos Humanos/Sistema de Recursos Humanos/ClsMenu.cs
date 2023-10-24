@@ -8,9 +8,10 @@ namespace Sistema_de_Recursos_Humanos
 {
     internal class ClsMenu
     {
+        ClsEmpleados empleados = new ClsEmpleados();
         static bool again = true;
         static int opcion = 0;
-        public static void Menu() 
+        public static void menu() 
         {
             do
             {
@@ -25,12 +26,14 @@ namespace Sistema_de_Recursos_Humanos
                         Console.WriteLine("\n¡Hasta la próxima!\n\nEnter para salir.");
                         break;
                     case 1:
-                        ClsEmpleado.Agregar();
+                        ClsEmpleados.Agregar();
                         break;
                     case 2: break;
                     case 3: break;
                     case 4: break;
-                    case 5: break;
+                    case 5:
+                        ClsEmpleados.Inicializar();
+                        break;
                     case 6: break;
                 }
             }

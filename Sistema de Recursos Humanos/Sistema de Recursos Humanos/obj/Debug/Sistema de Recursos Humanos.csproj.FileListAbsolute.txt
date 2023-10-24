@@ -1,0 +1,7 @@
+E:\universidad\progra\Examen 1 - Sebastian Mora\Sistema de Recursos Humanos\Sistema de Recursos Humanos\bin\Debug\Sistema de Recursos Humanos.exe.config
+E:\universidad\progra\Examen 1 - Sebastian Mora\Sistema de Recursos Humanos\Sistema de Recursos Humanos\bin\Debug\Sistema de Recursos Humanos.exe
+E:\universidad\progra\Examen 1 - Sebastian Mora\Sistema de Recursos Humanos\Sistema de Recursos Humanos\bin\Debug\Sistema de Recursos Humanos.pdb
+E:\universidad\progra\Examen 1 - Sebastian Mora\Sistema de Recursos Humanos\Sistema de Recursos Humanos\obj\Debug\Sistema de Recursos Humanos.csproj.AssemblyReference.cache
+E:\universidad\progra\Examen 1 - Sebastian Mora\Sistema de Recursos Humanos\Sistema de Recursos Humanos\obj\Debug\Sistema de Recursos Humanos.csproj.CoreCompileInputs.cache
+E:\universidad\progra\Examen 1 - Sebastian Mora\Sistema de Recursos Humanos\Sistema de Recursos Humanos\obj\Debug\Sistema de Recursos Humanos.exe
+E:\universidad\progra\Examen 1 - Sebastian Mora\Sistema de Recursos Humanos\Sistema de Recursos Humanos\obj\Debug\Sistema de Recursos Humanos.pdb

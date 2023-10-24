@@ -10,6 +10,8 @@ namespace Sistema_de_Recursos_Humanos
     {
         static void Main(string[] args)
         {
+            ClsMenu.menu();
+            Console.Read();
         }
     }
 }

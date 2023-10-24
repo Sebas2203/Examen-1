@@ -8,13 +8,16 @@ namespace Sistema_de_Recursos_Humanos
 {
     internal class ClsEmpleados
     {
-        public int cedula { get; set; }
-        public string nombre { get; set; }
-        public string direccion { get; set; }
-        public int telefono { get; set; }
-        public float salario { get; set; }
+        //atributos
+        static int cantidad = 3;
+        private int[] cedula = new int[cantidad];
+        private string[] nombre = new string[cantidad];
+        private string[] direccion = new string[cantidad];
+        private int[] telefono = new int[cantidad];
+        private float[] salario = new float[cantidad];
 
-        public ClsEmpleados(int cedula, string nombre, string direccion, int telefono, float salario)
+        //constructor
+        public ClsEmpleados(int[] cedula, string[] nombre, string[] direccion, int[] telefono, float[] salario)
         {
             this.cedula = cedula;
             this.nombre = nombre;
@@ -23,9 +26,20 @@ namespace Sistema_de_Recursos_Humanos
             this.salario = salario;
         }
 
+
+        //metodos
+        public void Inicializar()
+        {
+            cedula = Enumerable.Repeat(0, cantidad).ToArray();
+            nombre = Enumerable.Repeat("", cantidad).ToArray();
+            direccion = Enumerable.Repeat("", cantidad).ToArray();
+            telefono = Enumerable.Repeat(0, cantidad).ToArray();
+            salario = Enumerable.Repeat(0f, cantidad).ToArray();
+            Console.WriteLine("Arrelgos Inicializados");
+        }
         public static void Agregar()
         {
-
+            //2:00:00
         }
     }
 }
