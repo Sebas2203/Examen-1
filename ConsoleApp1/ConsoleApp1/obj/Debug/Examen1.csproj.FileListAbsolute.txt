@@ -1,7 +1,0 @@
-E:\universidad\progra\Examen 1 - Sebastian Mora\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
-E:\universidad\progra\Examen 1 - Sebastian Mora\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
-E:\universidad\progra\Examen 1 - Sebastian Mora\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
-E:\universidad\progra\Examen 1 - Sebastian Mora\ConsoleApp1\ConsoleApp1\obj\Debug\Examen1.csproj.AssemblyReference.cache
-E:\universidad\progra\Examen 1 - Sebastian Mora\ConsoleApp1\ConsoleApp1\obj\Debug\Examen1.csproj.CoreCompileInputs.cache
-E:\universidad\progra\Examen 1 - Sebastian Mora\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
-E:\universidad\progra\Examen 1 - Sebastian Mora\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

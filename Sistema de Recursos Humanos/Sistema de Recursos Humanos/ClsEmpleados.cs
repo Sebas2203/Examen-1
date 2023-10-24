@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace Sistema_de_Recursos_Humanos
 {
-    internal class ClsEmpleado
+    internal class ClsEmpleados
     {
         public int cedula { get; set; }
         public string nombre { get; set; }
@@ -14,7 +14,7 @@ namespace ConsoleApp1
         public int telefono { get; set; }
         public float salario { get; set; }
 
-        public ClsEmpleado(int cedula, string nombre, string direccion, int telefono, float salario)
+        public ClsEmpleados(int cedula, string nombre, string direccion, int telefono, float salario)
         {
             this.cedula = cedula;
             this.nombre = nombre;

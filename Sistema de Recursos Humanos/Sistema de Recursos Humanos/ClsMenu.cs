@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace Sistema_de_Recursos_Humanos
 {
-    internal class Clsmenu
+    internal class ClsMenu
     {
         static bool again = true;
         static int opcion = 0;
-        public static void menu()
+        public static void Menu() 
         {
             do
             {
@@ -18,19 +18,19 @@ namespace ConsoleApp1
                       "4. Borrar Empleados\n5. Inicializar Arrelgos\n6. Reportes\n0. Salir");
                 Console.Write("\nIngrese una opción: ");
                 int.TryParse(Console.ReadLine(), out opcion);
-            switch (opcion)
+                switch (opcion)
                 {
                     case 0:
                         again = false;
                         Console.WriteLine("\n¡Hasta la próxima!\n\nEnter para salir.");
-                        break; 
+                        break;
                     case 1:
-                        ClsEmpleado.Agregar(); 
-                        break; 
-                    case 2: break; 
-                    case 3: break; 
-                    case 4: break; 
-                    case 5: break; 
+                        ClsEmpleado.Agregar();
+                        break;
+                    case 2: break;
+                    case 3: break;
+                    case 4: break;
+                    case 5: break;
                     case 6: break;
                 }
             }
