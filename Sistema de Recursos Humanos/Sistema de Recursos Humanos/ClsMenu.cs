@@ -15,29 +15,34 @@ namespace Sistema_de_Recursos_Humanos
         {
             do
             {
-                Console.WriteLine("1. Agregar Empleados\n2. Consultar Empleados\n3. Modificar Empleados\n" +
-                      "4. Borrar Empleados\n5. Inicializar Arrelgos\n6. Reportes\n0. Salir");
-                Console.Write("\nIngrese una opción: ");
-                int.TryParse(Console.ReadLine(), out opcion);
-                switch (opcion)
+                try
                 {
-                    case 0:
-                        again = false;
-                        Console.WriteLine("\n¡Hasta la próxima!\n\nEnter para salir.");
-                        break;
-                    case 1:
-                        ClsEmpleados.Agregar();
-                        break;
-                    case 2: break;
-                    case 3: break;
-                    case 4: break;
-                    case 5:
-                        ClsEmpleados.Inicializar();
-                        break;
-                    case 6:
-                        subMenu();
-                        break;
+                    Console.WriteLine("1. Agregar Empleados\n2. Consultar Empleados\n3. Modificar Empleados\n" +
+                      "4. Borrar Empleados\n5. Inicializar Arrelgos\n6. Reportes\n0. Salir");
+                    Console.Write("\nIngrese una opción: ");
+                    int.TryParse(Console.ReadLine(), out opcion);
+                    switch (opcion)
+                    {
+                        case 0:
+                            again = false;
+                            Console.WriteLine("\n¡Hasta la próxima!\n\nEnter para salir.");
+                            break;
+                        case 1:
+                            ClsEmpleados.Agregar();
+                            break;
+                        case 2: break;
+                        case 3: break;
+                        case 4: break;
+                        case 5:
+                            ClsEmpleados.Inicializar();
+                            break;
+                        case 6:
+                            subMenu();
+                            break;
+                    }
                 }
+                catch {Console.Clear(); Console.WriteLine("\nIngrese una opción correcta\n"); }
+
             }
             while (again);
         }

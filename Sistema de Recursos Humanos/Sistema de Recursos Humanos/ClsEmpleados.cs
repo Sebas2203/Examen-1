@@ -77,6 +77,8 @@ namespace Sistema_de_Recursos_Humanos
                 Console.WriteLine("------------");
             }
             Console.WriteLine("\n---Fin Reporte Empleados---\n");
+
+            //2:26:00
         }
     }
 }
