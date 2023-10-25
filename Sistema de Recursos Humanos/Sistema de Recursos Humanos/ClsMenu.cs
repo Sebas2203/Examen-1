@@ -34,7 +34,31 @@ namespace Sistema_de_Recursos_Humanos
                     case 5:
                         ClsEmpleados.Inicializar();
                         break;
-                    case 6: break;
+                    case 6:
+                        subMenu();
+                        break;
+                }
+            }
+            while (again);
+        }
+
+        public static void subMenu()
+        {
+            do
+            {
+                Console.WriteLine("1. Consultar Empleado\n2. Reporte General Empleados\n3. Calcular y mostrar el promedio de los salarios Empleados\n" +
+                      "4. Calcular y mostrar el salario más alto y el más bajo de todos los empleados\n0. Atrás");
+                Console.Write("\nIngrese una opción: ");
+                int.TryParse(Console.ReadLine(), out opcion);
+                switch (opcion)
+                {
+                    case 0:
+                        again = false;
+                        break;
+                    case 1: break; 
+                    case 2:
+                        ClsEmpleados.reporteGeneral();
+                        break;
                 }
             }
             while (again);

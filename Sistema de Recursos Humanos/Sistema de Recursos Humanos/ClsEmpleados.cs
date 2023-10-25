@@ -10,36 +10,73 @@ namespace Sistema_de_Recursos_Humanos
     {
         //atributos
         static int cantidad = 3;
-        private int[] cedula = new int[cantidad];
-        private string[] nombre = new string[cantidad];
-        private string[] direccion = new string[cantidad];
-        private int[] telefono = new int[cantidad];
-        private float[] salario = new float[cantidad];
+        static byte indice = 0;
+        static byte posicion = 1;
 
-        //constructor
-        public ClsEmpleados(int[] cedula, string[] nombre, string[] direccion, int[] telefono, float[] salario)
-        {
-            this.cedula = cedula;
-            this.nombre = nombre;
-            this.direccion = direccion;
-            this.telefono = telefono;
-            this.salario = salario;
-        }
+        private static int[] cedula = new int[cantidad];
+        private static string[] nombre = new string[cantidad];
+        private static string[] direccion = new string[cantidad];
+        private static int[] telefono = new int[cantidad];
+        private static float[] salario = new float[cantidad];
 
 
         //metodos
-        public void Inicializar()
+        public static void Inicializar()
         {
             cedula = Enumerable.Repeat(0, cantidad).ToArray();
             nombre = Enumerable.Repeat("", cantidad).ToArray();
             direccion = Enumerable.Repeat("", cantidad).ToArray();
             telefono = Enumerable.Repeat(0, cantidad).ToArray();
             salario = Enumerable.Repeat(0f, cantidad).ToArray();
-            Console.WriteLine("Arrelgos Inicializados");
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nArrelgos Inicializados\n");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static void Agregar()
         {
-            //2:00:00
+            char respuesta = ' ';
+            do
+            {
+                try
+                {
+                    Console.WriteLine($"\n---Empleado {posicion}--\n");
+                    Console.Write("Cédula: ");
+                    cedula[indice] = int.Parse(Console.ReadLine());
+                    Console.Write("Nombre: ");
+                    nombre[indice] = Console.ReadLine();
+                    Console.Write("Dirección: ");
+                    direccion[indice] = Console.ReadLine();
+                    Console.Write("Teléfono: ");
+                    telefono[indice] = int.Parse(Console.ReadLine());
+                    Console.Write("Salario: ");
+                    salario[indice] = float.Parse(Console.ReadLine());
+                    indice++;
+                    posicion++;
+                    Console.WriteLine("¿Desea ingresar otro Empleado? S/N");
+                    respuesta = char.Parse(Console.ReadLine().ToUpper());
+                }
+                catch
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nError al ingresar empleado\n");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+            }
+            while (!respuesta.Equals('N'));
+        }
+
+        public static void reporteGeneral()
+        {
+            Console.WriteLine("\n---Reporte Empleados---\n");
+            for (int i = 0; i < cantidad; i++)
+            {
+                Console.WriteLine($"Cédula: {cedula[i]}\nNombre: {nombre[i]}\nTeléfono: {telefono[i]}\n" +
+                    $"Dirección: {direccion[i]}\nSalario: {salario[i]}");
+                Console.WriteLine("------------");
+            }
+            Console.WriteLine("\n---Fin Reporte Empleados---\n");
         }
     }
 }
