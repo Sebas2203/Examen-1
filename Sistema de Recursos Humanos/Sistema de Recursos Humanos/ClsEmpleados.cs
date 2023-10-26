@@ -9,7 +9,7 @@ namespace Sistema_de_Recursos_Humanos
     internal class ClsEmpleados
     {
         //atributos
-        static int cantidad = 3;
+        static int cantidad = 5;
         static byte indice = 0;
         static byte posicion = 1;
 
@@ -52,6 +52,8 @@ namespace Sistema_de_Recursos_Humanos
                 }
             }
             while (!respuesta.Equals('N') && posicion <= cantidad);
+            Console.ReadLine();
+            Console.Clear();
         }
 
         public static void Consultar()
@@ -64,6 +66,8 @@ namespace Sistema_de_Recursos_Humanos
                 Console.WriteLine("------------");
             }
             Console.WriteLine("\n---Fin Reporte Empleados---\n");
+            Console.ReadLine();
+            Console.Clear();
         }
         public static void Borrar()
         {
@@ -87,6 +91,8 @@ namespace Sistema_de_Recursos_Humanos
             {
                 Console.WriteLine($"No se encontró el empleado con el número de cédula {borrarEmpleado}");
             }
+            Console.ReadLine();
+            Console.Clear();
         }
         public static void Modificar()
         {
@@ -113,6 +119,8 @@ namespace Sistema_de_Recursos_Humanos
             {
                 Console.WriteLine($"No se encontró el empleado con el número de cédula {modificarEmpleado}");
             }
+            Console.ReadLine();
+            Console.Clear();
         }
         public static void Inicializar()
         {
@@ -128,6 +136,8 @@ namespace Sistema_de_Recursos_Humanos
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nArrelgos Inicializados\n");
             Console.ForegroundColor = ConsoleColor.White;
+            Console.ReadLine();
+            Console.Clear();
         }
 
         //metodos de submenu
@@ -155,11 +165,36 @@ namespace Sistema_de_Recursos_Humanos
             {
                 Console.WriteLine($"No se encontró el empleado con el número de cédula {consulta}");
             }
+            Console.ReadLine();
+            Console.Clear();
         }
         public static void reporteGeneral()
-        { 
+        {
+            Array.Sort(nombre);
+
+            Console.WriteLine("\n---Empleados ordenados---\n");
+            foreach (string i in nombre)
+            {
+                Console.WriteLine(i);
+            }
+            Console.ReadLine();
+            Console.Clear();
         }
 
+        public static void promedio()
+        {
+            Console.WriteLine($"\nEl promedio de salarios es de: { salario.Average()}\n");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public static void MaxMin()
+        {
+            Console.WriteLine($"\nEl Salario mínimo es: {salario.Min()}");
+            Console.WriteLine($"El Salario máximo es : {salario.Max()}\n");
+            Console.ReadLine();
+            Console.Clear();
+        }
 
     }
 }

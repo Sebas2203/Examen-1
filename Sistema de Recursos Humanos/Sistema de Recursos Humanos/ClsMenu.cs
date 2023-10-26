@@ -48,7 +48,6 @@ namespace Sistema_de_Recursos_Humanos
                     }
                 }
                 catch {Console.Clear(); Console.WriteLine("\nIngrese una opción correcta\n"); }
-
             }
             while (again);
         }
@@ -57,6 +56,7 @@ namespace Sistema_de_Recursos_Humanos
         {
             do
             {
+                Console.WriteLine("\n---REPORTES---\n");
                 Console.WriteLine("1. Consultar Empleado\n2. Reporte General Empleados\n3. Calcular y mostrar el promedio de los salarios Empleados\n" +
                       "4. Calcular y mostrar el salario más alto y el más bajo de todos los empleados\n0. Atrás");
                 Console.Write("\nIngrese una opción: ");
@@ -71,6 +71,12 @@ namespace Sistema_de_Recursos_Humanos
                         break; 
                     case 2:
                         ClsEmpleados.reporteGeneral();
+                        break;
+                    case 3:
+                        ClsEmpleados.promedio();
+                        break;
+                    case 4:
+                        ClsEmpleados.MaxMin();
                         break;
                 }
             }
