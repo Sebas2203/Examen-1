@@ -57,8 +57,8 @@ namespace Sistema_de_Recursos_Humanos
             do
             {
                 Console.WriteLine("\n---REPORTES---\n");
-                Console.WriteLine("1. Consultar Empleado\n2. Reporte General Empleados\n3. Calcular y mostrar el promedio de los salarios Empleados\n" +
-                      "4. Calcular y mostrar el salario más alto y el más bajo de todos los empleados\n0. Atrás");
+                Console.WriteLine("1. Consultar Empleado\n2. Lista General Empleados\n3. Promedio de los salarios\n" +
+                      "4. Salario Mínimo y Máximo\n0. Atrás");
                 Console.Write("\nIngrese una opción: ");
                 int.TryParse(Console.ReadLine(), out opcion);
                 switch (opcion)
