@@ -31,13 +31,13 @@ namespace Sistema_de_Recursos_Humanos
                             ClsEmpleados.Agregar();
                             break;
                         case 2:
-                            
+                            ClsEmpleados.Consultar();
                             break;
                         case 3: 
-                            ClsEmpleados.modificar();
+                            ClsEmpleados.Modificar();
                             break;
                         case 4:
-                            ClsEmpleados.borrar();
+                            ClsEmpleados.Borrar();
                             break;
                         case 5:
                             ClsEmpleados.Inicializar();

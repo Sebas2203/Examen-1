@@ -19,7 +19,6 @@ namespace Sistema_de_Recursos_Humanos
         private static int[] telefono = new int[cantidad];
         private static float[] salario = new float[cantidad];
 
-
         //metodos menu
         public static void Agregar()
         {
@@ -55,7 +54,18 @@ namespace Sistema_de_Recursos_Humanos
             while (!respuesta.Equals('N') && posicion <= cantidad);
         }
 
-        public static void borrar()
+        public static void Consultar()
+        {
+            Console.WriteLine("\n---Reporte Empleados---\n");
+            for (int i = 0; i < posicion - 1; i++)
+            {
+                Console.WriteLine($"Cédula: {cedula[i]}\nNombre: {nombre[i]}\nTeléfono: {telefono[i]}\n" +
+                    $"Dirección: {direccion[i]}\nSalario: {salario[i]}");
+                Console.WriteLine("------------");
+            }
+            Console.WriteLine("\n---Fin Reporte Empleados---\n");
+        }
+        public static void Borrar()
         {
             Console.WriteLine("Digite el número de cédula que se desea eliminar");
             int borrarEmpleado = int.Parse(Console.ReadLine());
@@ -78,7 +88,7 @@ namespace Sistema_de_Recursos_Humanos
                 Console.WriteLine($"No se encontró el empleado con el número de cédula {borrarEmpleado}");
             }
         }
-        public static void modificar()
+        public static void Modificar()
         {
             Console.WriteLine("Digite el número de cédula que se desea modificar");
             int modificarEmpleado = int.Parse(Console.ReadLine());
@@ -89,11 +99,14 @@ namespace Sistema_de_Recursos_Humanos
                 {
                     existe = true;
 
-                    cedula[i] = 0;
-                    nombre[i] = " ";
-                    direccion[i] = " ";
-                    telefono[i] = 0;
-                    salario[i] = 0;
+                    Console.Write("Nombre: ");
+                    nombre[i] = Console.ReadLine();
+                    Console.Write("Dirección: ");
+                    direccion[i] = Console.ReadLine();
+                    Console.Write("Teléfono: ");
+                    telefono[i] = int.Parse(Console.ReadLine());
+                    Console.Write("Salario: ");
+                    salario[i] = float.Parse(Console.ReadLine());
                 }
             }
             if (existe.Equals(false))
@@ -118,26 +131,14 @@ namespace Sistema_de_Recursos_Humanos
         }
 
         //metodos de submenu
-        public static void reporteGeneral()
-        {
-            Console.WriteLine("\n---Reporte Empleados---\n");
-            for (int i = 0; i < posicion - 1; i++)
-            {
-                Console.WriteLine($"Cédula: {cedula[i]}\nNombre: {nombre[i]}\nTeléfono: {telefono[i]}\n" +
-                    $"Dirección: {direccion[i]}\nSalario: {salario[i]}");
-                Console.WriteLine("------------");
-            }
-            Console.WriteLine("\n---Fin Reporte Empleados---\n");
-        }
-
-        public static void reporteEmpleado() 
+        public static void reporteEmpleado()
         {
             bool existe = false;
 
             Console.Write("Introduzca la Cédula: ");
             int consulta = int.Parse(Console.ReadLine());
-            
-            for (int i = 0;i < cantidad; i++)
+
+            for (int i = 0; i < cantidad; i++)
             {
                 if (consulta.Equals(cedula[i]))
                 {
@@ -148,12 +149,17 @@ namespace Sistema_de_Recursos_Humanos
                     Console.WriteLine("------------");
                     break;
                 }
-                
+
             }
             if (existe.Equals(false))
             {
                 Console.WriteLine($"No se encontró el empleado con el número de cédula {consulta}");
             }
         }
+        public static void reporteGeneral()
+        { 
+        }
+
+
     }
 }
