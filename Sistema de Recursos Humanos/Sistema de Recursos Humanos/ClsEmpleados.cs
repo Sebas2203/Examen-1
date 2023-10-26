@@ -29,6 +29,9 @@ namespace Sistema_de_Recursos_Humanos
             telefono = Enumerable.Repeat(0, cantidad).ToArray();
             salario = Enumerable.Repeat(0f, cantidad).ToArray();
 
+            posicion = 1;
+            indice = 0;
+
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nArrelgos Inicializados\n");
             Console.ForegroundColor = ConsoleColor.White;
@@ -64,21 +67,72 @@ namespace Sistema_de_Recursos_Humanos
                     Console.ForegroundColor = ConsoleColor.White;
                 }
             }
-            while (!respuesta.Equals('N'));
+            while (!respuesta.Equals('N') && posicion <= cantidad);
         }
 
         public static void reporteGeneral()
         {
             Console.WriteLine("\n---Reporte Empleados---\n");
-            for (int i = 0; i < cantidad; i++)
+            for (int i = 0; i < posicion - 1; i++)
             {
                 Console.WriteLine($"Cédula: {cedula[i]}\nNombre: {nombre[i]}\nTeléfono: {telefono[i]}\n" +
                     $"Dirección: {direccion[i]}\nSalario: {salario[i]}");
                 Console.WriteLine("------------");
             }
             Console.WriteLine("\n---Fin Reporte Empleados---\n");
+        }
 
-            //2:26:00
+        public static void reporteEmpleado() 
+        {
+            bool existe = false;
+
+            Console.Write("Introduzca la Cédula: ");
+            int consulta = int.Parse(Console.ReadLine());
+            
+            for (int i = 0;i < cantidad; i++)
+            {
+                if (consulta.Equals(cedula[i]))
+                {
+                    existe = true;
+                    Console.WriteLine("------------");
+                    Console.WriteLine($"Cédula: {cedula[i]}\nNombre: {nombre[i]}\nTeléfono: {telefono[i]}\n" +
+                    $"Dirección: {direccion[i]}\nSalario: {salario[i]}");
+                    Console.WriteLine("------------");
+                    break;
+                }
+                
+            }
+            if (existe.Equals(false))
+            {
+                Console.WriteLine($"No se encontró el empleado con el número de cédula {consulta}");
+            }
+        }
+        public static void borrar()
+        {
+            Console.WriteLine("Digite el número de cédila que se desea eliminar");
+            int borrarEmpleado = int.Parse(Console.ReadLine());
+            bool existe = false;
+            for (int i = 0;i < cantidad; i++)
+            {
+                if (borrarEmpleado.Equals(cedula[i]))
+                {
+                    existe= true;
+
+                    cedula[i] = 0;
+                    nombre[i] = " ";
+                    direccion[i] = " ";
+                    telefono[i] = 0;
+                    salario[i] = 0;
+                }
+            }
+            if (existe.Equals(false))
+            {
+                Console.WriteLine($"No se encontró el empleado con el número de cédula {borrarEmpleado}");
+            }
+        }
+        public static void modificar()
+        {
+
         }
     }
 }

@@ -30,9 +30,15 @@ namespace Sistema_de_Recursos_Humanos
                         case 1:
                             ClsEmpleados.Agregar();
                             break;
-                        case 2: break;
-                        case 3: break;
-                        case 4: break;
+                        case 2:
+                            
+                            break;
+                        case 3: 
+                            ClsEmpleados.modificar();
+                            break;
+                        case 4:
+                            ClsEmpleados.borrar();
+                            break;
                         case 5:
                             ClsEmpleados.Inicializar();
                             break;
@@ -58,9 +64,11 @@ namespace Sistema_de_Recursos_Humanos
                 switch (opcion)
                 {
                     case 0:
-                        again = false;
+                        menu();
                         break;
-                    case 1: break; 
+                    case 1:
+                        ClsEmpleados.reporteEmpleado();
+                        break; 
                     case 2:
                         ClsEmpleados.reporteGeneral();
                         break;
